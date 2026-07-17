@@ -3,714 +3,560 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impression 3D Maroc - Créativité Sans Limites</title>
+    <title>Impression 3D Maroc — Le Premier Atelier National d'Impression 3D</title>
+    <meta name="description" content="Premier atelier d'impression 3D au Maroc. Prototypage, pièces techniques, maquettes architecturales et design créatif. Précision industrielle, livraison rapide.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #00D4FF;
-            --primary-dark: #0099CC;
-            --secondary: #FF3E7F;
-            --accent: #7B42F6;
-            --dark: #0A0A16;
-            --darker: #050510;
-            --light: #E6F7FF;
-            --gray: #8C8CA1;
-            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            --gradient-dark: linear-gradient(135deg, var(--primary-dark) 0%, var(--darker) 100%);
-            --neon-glow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 30px var(--primary);
+            --ink: #17140F;
+            --ink-soft: #4A453D;
+            --paper: #F6F3EC;
+            --paper-dim: #EBE6D9;
+            --panel: #1D1912;
+            --copper: #B5652B;
+            --copper-bright: #D97F3E;
+            --line: rgba(23, 20, 15, 0.14);
+            --line-dark: rgba(246, 243, 236, 0.14);
+            --serif: 'Fraunces', serif;
+            --sans: 'Inter', sans-serif;
+            --mono: 'Space Mono', monospace;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Exo 2', sans-serif;
-            background-color: var(--darker);
-            color: var(--light);
+            font-family: var(--sans);
+            background: var(--paper);
+            color: var(--ink);
             line-height: 1.6;
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(123, 66, 246, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 20%);
         }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            line-height: 1.2;
+
+        h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.08; letter-spacing: -0.01em; }
+
+        .container { width: 90%; max-width: 1180px; margin: 0 auto; }
+
+        .eyebrow {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--copper);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
         }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        /* Navigation */
+        .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--copper); }
+
+        a { color: inherit; }
+
+        /* ===== Header ===== */
         header {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            padding: 1.5rem 0;
-            transition: all 0.4s;
+            padding: 1.6rem 0;
+            transition: all 0.35s ease;
+            border-bottom: 1px solid transparent;
         }
-        
         header.scrolled {
-            background: rgba(5, 5, 16, 0.9);
+            background: rgba(246, 243, 236, 0.92);
             backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            padding: 1.1rem 0;
+            border-bottom: 1px solid var(--line);
         }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
+
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+
         .logo {
             display: flex;
-            align-items: center;
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary);
+            align-items: baseline;
+            gap: 0.5rem;
+            font-family: var(--serif);
+            font-size: 1.4rem;
+            font-weight: 600;
             text-decoration: none;
-            text-shadow: var(--neon-glow);
+            color: var(--ink);
         }
-        
-        .logo i {
-            margin-right: 10px;
-            font-size: 2rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 2rem;
-        }
-        
+        .logo span { font-family: var(--mono); font-size: 0.65rem; color: var(--copper); letter-spacing: 0.1em; }
+
+        .nav-links { display: flex; list-style: none; align-items: center; gap: 2.4rem; }
+
         .nav-links a {
             text-decoration: none;
-            color: var(--light);
-            font-weight: 600;
-            transition: all 0.3s;
+            color: var(--ink);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.25s;
             position: relative;
-            padding: 0.5rem 0;
         }
-        
-        .nav-links a:after {
+        .nav-links a:not(.nav-cta):after {
             content: '';
             position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background: var(--gradient);
-            transition: width 0.3s;
+            width: 0; height: 1px;
+            bottom: -4px; left: 0;
+            background: var(--copper);
+            transition: width 0.25s;
         }
-        
-        .nav-links a:hover {
-            color: var(--primary);
+        .nav-links a:not(.nav-cta):hover:after { width: 100%; }
+        .nav-links a:not(.nav-cta):hover { color: var(--copper); }
+
+        .nav-cta {
+            background: var(--ink);
+            color: var(--paper) !important;
+            padding: 0.65rem 1.4rem;
+            border-radius: 3px;
+            font-size: 0.88rem !important;
+            text-decoration: none;
+            transition: background 0.25s;
         }
-        
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-        
+        .nav-cta:hover { background: var(--copper); }
+
         .mobile-menu-btn {
             display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-            z-index: 1001;
+            background: none; border: none;
+            font-size: 1.4rem; color: var(--ink);
+            cursor: pointer; z-index: 1001;
         }
-        
-        /* Hero Section */
+
+        /* ===== Hero ===== */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
+            padding-top: 6rem;
             overflow: hidden;
         }
-        
-        .hero-bg {
+
+        .hero::before {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-dark);
-            z-index: -2;
-        }
-        
-        .hero-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; right: 0;
+            width: 42%; height: 100%;
+            background: var(--panel);
+            clip-path: polygon(28% 0, 100% 0, 100% 100%, 0% 100%);
             z-index: -1;
         }
-        
-        .particle {
+
+        .hero-grid {
             position: absolute;
-            background: var(--primary);
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: float 15s infinite linear;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--line) 1px, transparent 1px);
+            background-size: 64px 64px;
+            opacity: 0.35;
+            z-index: -2;
+            mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
         }
-        
-        @keyframes float {
-            0% { transform: translateY(0) translateX(0); }
-            50% { transform: translateY(-20px) translateX(20px); }
-            100% { transform: translateY(0) translateX(0); }
-        }
-        
+
         .hero-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 3rem;
             align-items: center;
         }
-        
-        .hero-text {
-            color: var(--light);
+
+        .badge-first {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--ink);
+            color: var(--paper);
+            padding: 0.55rem 1.1rem 0.55rem 0.7rem;
+            border-radius: 3px;
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.06em;
+            margin-bottom: 1.8rem;
         }
-        
+        .badge-first .badge-num {
+            background: var(--copper);
+            color: var(--ink);
+            font-weight: 700;
+            width: 22px; height: 22px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem;
+        }
+
         .hero-text h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: var(--neon-glow);
+            font-size: 3.6rem;
+            margin-bottom: 1.6rem;
+            color: var(--ink);
         }
-        
+        .hero-text h1 em {
+            font-style: italic;
+            color: var(--copper);
+        }
+
         .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            color: var(--gray);
+            font-size: 1.15rem;
+            margin-bottom: 2.4rem;
+            color: var(--ink-soft);
+            max-width: 480px;
         }
-        
+
+        .hero-actions { display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap; }
+
         .cta-button {
             display: inline-flex;
             align-items: center;
-            background: var(--gradient);
-            color: white;
-            padding: 15px 35px;
-            border-radius: 50px;
+            gap: 0.7rem;
+            background: var(--ink);
+            color: var(--paper);
+            padding: 1rem 1.9rem;
+            border-radius: 3px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: all 0.3s;
-            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
         }
-        
-        .cta-button:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: var(--gradient-dark);
-            transition: all 0.5s;
-            z-index: -1;
+        .cta-button:hover { background: var(--copper); transform: translateY(-2px); }
+
+        .cta-secondary {
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--ink);
+            border-bottom: 1px solid var(--ink);
+            padding-bottom: 2px;
         }
-        
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.5);
+        .cta-secondary:hover { color: var(--copper); border-color: var(--copper); }
+
+        .hero-stats {
+            display: flex;
+            gap: 2.2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--line);
         }
-        
-        .cta-button:hover:before {
-            width: 100%;
+        .hero-stats div { }
+        .hero-stats .num {
+            font-family: var(--serif);
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: var(--ink);
+            display: block;
         }
-        
+        .hero-stats .label {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            letter-spacing: 0.06em;
+            color: var(--ink-soft);
+            text-transform: uppercase;
+        }
+
+        /* Hero visual: technical drawing panel */
         .hero-visual {
             position: relative;
-            height: 500px;
-            perspective: 1000px;
-        }
-        
-        .cube-container {
-            width: 200px;
-            height: 200px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform-style: preserve-3d;
-            transform: translate(-50%, -50%) rotateX(-20deg) rotateY(-20deg);
-            animation: rotate 20s infinite linear;
-        }
-        
-        .cube-face {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: rgba(0, 212, 255, 0.1);
-            border: 2px solid var(--primary);
+            height: 520px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: var(--primary);
-            box-shadow: inset 0 0 20px rgba(0, 212, 255, 0.2), 0 0 20px rgba(0, 212, 255, 0.3);
         }
-        
-        .front { transform: translateZ(100px); }
-        .back { transform: translateZ(-100px) rotateY(180deg); }
-        .right { transform: translateX(100px) rotateY(90deg); }
-        .left { transform: translateX(-100px) rotateY(-90deg); }
-        .top { transform: translateY(-100px) rotateX(90deg); }
-        .bottom { transform: translateY(100px) rotateX(-90deg); }
-        
-        @keyframes rotate {
-            0% { transform: translate(-50%, -50%) rotateX(-20deg) rotateY(0deg); }
-            100% { transform: translate(-50%, -50%) rotateX(-20deg) rotateY(360deg); }
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 8rem 0;
-            background: var(--dark);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .services:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+
+        .spec-panel {
             width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(123, 66, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
-            z-index: 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 5rem;
+            max-width: 380px;
+            background: rgba(246, 243, 236, 0.04);
+            border: 1px solid var(--line-dark);
+            border-radius: 4px;
+            padding: 2rem;
+            color: var(--paper);
             position: relative;
-            z-index: 1;
         }
-        
-        .section-header h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            color: var(--light);
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+
+        .spec-panel .spec-label {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            color: var(--copper-bright);
+            text-transform: uppercase;
+            margin-bottom: 1.4rem;
+            display: block;
         }
-        
-        .section-header p {
-            font-size: 1.2rem;
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto;
+
+        .part-viz {
+            width: 100%;
+            height: 220px;
+            position: relative;
+            margin-bottom: 1.6rem;
         }
-        
+
+        .layer-stack {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            gap: 3px;
+        }
+        .layer-stack .layer {
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--copper-bright), transparent);
+            opacity: 0.85;
+            animation: layerGrow 4s ease-in-out infinite;
+        }
+        .layer-stack .layer:nth-child(1) { width: 40%; animation-delay: 0s; }
+        .layer-stack .layer:nth-child(2) { width: 55%; animation-delay: 0.1s; }
+        .layer-stack .layer:nth-child(3) { width: 68%; animation-delay: 0.2s; }
+        .layer-stack .layer:nth-child(4) { width: 78%; animation-delay: 0.3s; }
+        .layer-stack .layer:nth-child(5) { width: 85%; animation-delay: 0.4s; }
+        .layer-stack .layer:nth-child(6) { width: 90%; animation-delay: 0.5s; }
+        .layer-stack .layer:nth-child(7) { width: 92%; animation-delay: 0.6s; }
+        .layer-stack .layer:nth-child(8) { width: 90%; animation-delay: 0.7s; }
+        .layer-stack .layer:nth-child(9) { width: 85%; animation-delay: 0.8s; }
+        .layer-stack .layer:nth-child(10) { width: 78%; animation-delay: 0.9s; }
+        .layer-stack .layer:nth-child(11) { width: 68%; animation-delay: 1s; }
+        .layer-stack .layer:nth-child(12) { width: 55%; animation-delay: 1.1s; }
+        .layer-stack .layer:nth-child(13) { width: 40%; animation-delay: 1.2s; }
+
+        @keyframes layerGrow {
+            0%, 100% { opacity: 0.35; }
+            50% { opacity: 1; }
+        }
+
+        .spec-rows { display: flex; flex-direction: column; gap: 0.7rem; }
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            padding-bottom: 0.7rem;
+            border-bottom: 1px solid var(--line-dark);
+            color: rgba(246, 243, 236, 0.75);
+        }
+        .spec-row span:last-child { color: var(--copper-bright); }
+
+        /* ===== Trust bar ===== */
+        .trust-bar {
+            background: var(--paper-dim);
+            padding: 1.4rem 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+        .trust-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.03em;
+            color: var(--ink-soft);
+        }
+        .trust-row i { color: var(--copper); margin-right: 0.5rem; }
+
+        /* ===== Services ===== */
+        .services { padding: 9rem 0 8rem; background: var(--paper); }
+
+        .section-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: end;
+            margin-bottom: 4.5rem;
+        }
+        .section-header h2 { font-size: 2.6rem; margin-top: 0.8rem; }
+        .section-header .desc { color: var(--ink-soft); font-size: 1.05rem; padding-bottom: 0.4rem; }
+
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            position: relative;
-            z-index: 1;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: var(--line);
+            border: 1px solid var(--line);
         }
-        
+
         .service-card {
-            background: rgba(10, 10, 22, 0.7);
-            border-radius: 15px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s;
+            background: var(--paper);
+            padding: 3rem 2.6rem;
+            transition: background 0.3s;
             position: relative;
-            overflow: hidden;
-            z-index: 1;
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            backdrop-filter: blur(10px);
         }
-        
-        .service-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: var(--gradient);
-            transition: width 0.3s;
-            z-index: -1;
+        .service-card:hover { background: var(--paper-dim); }
+
+        .service-index {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            color: var(--copper);
+            margin-bottom: 1.6rem;
+            display: block;
         }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.2);
-        }
-        
-        .service-card:hover:before {
-            width: 100%;
-            opacity: 0.1;
-        }
-        
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        .service-card p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Gallery Section */
-        .gallery {
-            padding: 8rem 0;
-            background: var(--darker);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .gallery-header {
-            text-align: center;
-            margin-bottom: 5rem;
-        }
-        
-        .gallery-header h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            color: var(--light);
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-        }
-        
-        .gallery-header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-            color: var(--gray);
-        }
-        
-        .gallery-grid {
+
+        .service-card h3 { font-size: 1.4rem; margin-bottom: 0.9rem; color: var(--ink); }
+        .service-card p { color: var(--ink-soft); font-size: 0.98rem; }
+
+        /* ===== Process ===== */
+        .process { padding: 8rem 0; background: var(--panel); color: var(--paper); }
+        .process .section-header h2 { color: var(--paper); }
+        .process .section-header .desc { color: rgba(246,243,236,0.65); }
+        .process .eyebrow { color: var(--copper-bright); }
+        .process .eyebrow::before { background: var(--copper-bright); }
+
+        .process-steps {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
         }
-        
+        .process-step {
+            border-top: 1px solid var(--line-dark);
+            padding-top: 1.6rem;
+        }
+        .process-step .step-num {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--copper-bright);
+            display: block;
+            margin-bottom: 1rem;
+        }
+        .process-step h4 { font-size: 1.15rem; margin-bottom: 0.6rem; color: var(--paper); font-family: var(--serif); }
+        .process-step p { font-size: 0.9rem; color: rgba(246,243,236,0.62); }
+
+        /* ===== Gallery ===== */
+        .gallery { padding: 8rem 0; background: var(--paper); }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.6rem;
+        }
+
         .gallery-item {
             position: relative;
-            border-radius: 15px;
+            border-radius: 4px;
             overflow: hidden;
-            height: 250px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s;
-            cursor: pointer;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            height: 280px;
+            border: 1px solid var(--line);
         }
-        
-        .gallery-item:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.3);
-        }
-        
-        .gallery-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .gallery-item:hover .gallery-img {
-            transform: scale(1.1);
-        }
-        
+
+        .gallery-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; filter: grayscale(15%); }
+        .gallery-item:hover .gallery-img { transform: scale(1.06); filter: grayscale(0%); }
+
         .gallery-overlay {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(5, 5, 16, 0.9));
-            padding: 1.5rem;
-            transform: translateY(100%);
-            transition: transform 0.3s;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(transparent, rgba(23,20,15,0.92));
+            padding: 1.6rem;
+            transform: translateY(10px);
+            opacity: 0;
+            transition: all 0.3s;
         }
-        
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-        }
-        
-        .gallery-overlay h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-        
-        .gallery-overlay p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        /* CTA Section */
+        .gallery-item:hover .gallery-overlay { transform: translateY(0); opacity: 1; }
+        .gallery-overlay h3 { font-size: 1.1rem; color: var(--paper); margin-bottom: 0.3rem; }
+        .gallery-overlay p { font-size: 0.85rem; color: rgba(246,243,236,0.75); }
+
+        /* ===== CTA ===== */
         .cta-section {
-            padding: 6rem 0;
-            background: var(--gradient-dark);
+            padding: 7rem 0;
+            background: var(--ink);
+            color: var(--paper);
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
-        
-        .cta-section:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
-            background-size: cover;
-        }
-        
-        .cta-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cta-content h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--light);
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-        }
-        
-        .cta-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            color: var(--light);
-        }
-        
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-        
+        .cta-content { max-width: 640px; margin: 0 auto; }
+        .cta-content .eyebrow { color: var(--copper-bright); margin-bottom: 1.4rem; justify-content: center; }
+        .cta-content .eyebrow::before { display: none; }
+        .cta-content h2 { font-size: 2.6rem; margin-bottom: 1.3rem; color: var(--paper); }
+        .cta-content p { font-size: 1.1rem; margin-bottom: 2.6rem; color: rgba(246,243,236,0.72); }
+
+        .contact-buttons { display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
+
         .contact-btn {
             display: inline-flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
+            gap: 0.7rem;
+            background: rgba(246,243,236,0.06);
+            color: var(--paper);
+            padding: 1rem 1.8rem;
+            border-radius: 3px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid var(--line-dark);
             transition: all 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-        
-        .contact-btn i {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .contact-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .whatsapp-btn {
-            background: rgba(37, 211, 102, 0.2);
-            border: 1px solid rgba(37, 211, 102, 0.3);
-        }
-        
-        .whatsapp-btn:hover {
-            background: rgba(37, 211, 102, 0.3);
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--darker);
-            color: white;
-            padding: 5rem 0 2rem;
-            position: relative;
-        }
-        
+        .contact-btn:hover { background: rgba(246,243,236,0.12); transform: translateY(-2px); }
+        .contact-btn.whatsapp-btn { background: rgba(37, 211, 102, 0.14); border-color: rgba(37, 211, 102, 0.3); }
+        .contact-btn.whatsapp-btn:hover { background: rgba(37, 211, 102, 0.22); }
+        .contact-btn i { font-size: 1.1rem; }
+
+        /* ===== Footer ===== */
+        footer { background: var(--paper-dim); color: var(--ink); padding: 4.5rem 0 2rem; border-top: 1px solid var(--line); }
+
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 1.4fr 1fr 1fr;
             gap: 3rem;
             margin-bottom: 3rem;
         }
-        
-        .footer-col h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        .footer-col h3:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--gradient);
-        }
-        
-        .footer-col p {
-            margin-bottom: 1.5rem;
-            opacity: 0.8;
-        }
-        
-        .contact-info {
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-info div {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.8rem;
-        }
-        
-        .contact-info i {
-            margin-right: 10px;
-            color: var(--primary);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
+
+        .footer-col h3 { font-size: 1.2rem; margin-bottom: 1.3rem; color: var(--ink); font-family: var(--serif); }
+        .footer-col p { margin-bottom: 1.3rem; color: var(--ink-soft); font-size: 0.95rem; }
+
+        .contact-info div { display: flex; align-items: center; margin-bottom: 0.8rem; color: var(--ink-soft); font-size: 0.95rem; }
+        .contact-info i { margin-right: 0.7rem; color: var(--copper); width: 16px; }
+
+        .social-links { display: flex; gap: 12px; margin-top: 0.5rem; }
         .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
+            display: flex; align-items: center; justify-content: center;
+            width: 38px; height: 38px;
+            background: var(--ink); color: var(--paper);
+            border-radius: 50%; text-decoration: none;
             transition: all 0.3s;
         }
-        
-        .social-links a:hover {
-            background: var(--gradient);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
-        }
-        
+        .social-links a:hover { background: var(--copper); }
+
         .copyright {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.7;
-            font-size: 0.9rem;
+            border-top: 1px solid var(--line);
+            color: var(--ink-soft);
+            font-size: 0.82rem;
+            font-family: var(--mono);
         }
-        
-        /* Responsive Design */
+
+        /* ===== Responsive ===== */
         @media (max-width: 992px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .hero-visual {
-                height: 300px;
-                order: -1;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
+            .hero::before { clip-path: none; width: 100%; height: 40%; top: auto; bottom: 0; opacity: 0.06; background: var(--ink); }
+            .hero-content { grid-template-columns: 1fr; text-align: left; }
+            .hero-visual { height: 380px; order: -1; }
+            .mobile-menu-btn { display: block; }
             .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 70%;
-                height: 100vh;
-                background: rgba(5, 5, 16, 0.95);
-                backdrop-filter: blur(10px);
+                position: fixed; top: 0; right: -100%;
+                width: 75%; height: 100vh;
+                background: var(--paper);
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
                 justify-content: center;
-                padding: 2rem 0;
-                transition: all 0.5s;
+                padding: 2rem 2.5rem;
+                gap: 1.8rem;
+                transition: right 0.4s ease;
                 z-index: 1000;
+                border-left: 1px solid var(--line);
             }
-            
-            .nav-links.active {
-                right: 0;
-            }
-            
-            .nav-links li {
-                margin: 1.5rem 0;
-            }
+            .nav-links.active { right: 0; }
+            .section-header { grid-template-columns: 1fr; gap: 1rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: repeat(2, 1fr); }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-content { grid-template-columns: 1fr; gap: 2.4rem; }
         }
-        
+
         @media (max-width: 768px) {
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-            
-            .contact-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .contact-btn {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
-            }
-            
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero-text h1 { font-size: 2.5rem; }
+            .hero-stats { flex-wrap: wrap; gap: 1.6rem; }
+            .section-header h2 { font-size: 2.1rem; }
+            .process-steps { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .contact-buttons { flex-direction: column; align-items: stretch; }
+            .contact-btn { justify-content: center; }
         }
     </style>
 </head>
@@ -719,74 +565,97 @@
     <header id="header">
         <div class="container">
             <div class="nav-container">
-                <a href="#" class="logo">
-                    <i class="fas fa-cube"></i>
-                    Impression 3D
-                </a>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <a href="#accueil" class="logo">Impression 3D <span>MAROC</span></a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#process">Processus</a></li>
                     <li><a href="#galerie">Galerie</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" class="nav-cta">Demander un devis</a></li>
                 </ul>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero" id="accueil">
-        <div class="hero-bg"></div>
-        <div class="hero-particles" id="particles"></div>
+        <div class="hero-grid"></div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>L'Avenir en 3 Dimensions</h1>
-                    <p>Donnez forme à vos idées les plus innovantes avec notre technologie d'impression 3D de pointe. Créativité, précision et qualité exceptionnelle.</p>
-                    <a href="#contact" class="cta-button">Lancer votre projet <i class="fas fa-rocket" style="margin-left: 10px;"></i></a>
+                    <span class="badge-first"><span class="badge-num">1</span> LE PREMIER ATELIER D'IMPRESSION 3D AU MAROC</span>
+                    <h1>Vos idées, imprimées avec <em>précision</em>.</h1>
+                    <p>Depuis Rabat, nous fabriquons prototypes, pièces techniques et maquettes pour les créateurs, ingénieurs et architectes qui refusent l'approximation.</p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="cta-button">Lancer votre projet <i class="fas fa-arrow-right"></i></a>
+                        <a href="#galerie" class="cta-secondary">Voir nos réalisations</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div><span class="num">±0.1mm</span><span class="label">Tolérance</span></div>
+                        <div><span class="num">24–72h</span><span class="label">Délai moyen</span></div>
+                        <div><span class="num">100%</span><span class="label">Sur mesure</span></div>
+                    </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="cube-container">
-                        <div class="cube-face front"><i class="fas fa-cube"></i></div>
-                        <div class="cube-face back"><i class="fas fa-layer-group"></i></div>
-                        <div class="cube-face right"><i class="fas fa-bolt"></i></div>
-                        <div class="cube-face left"><i class="fas fa-magic"></i></div>
-                        <div class="cube-face top"><i class="fas fa-star"></i></div>
-                        <div class="cube-face bottom"><i class="fas fa-gem"></i></div>
+                    <div class="spec-panel">
+                        <span class="spec-label">// Fabrication additive</span>
+                        <div class="part-viz">
+                            <div class="layer-stack">
+                                <div class="layer"></div><div class="layer"></div><div class="layer"></div>
+                                <div class="layer"></div><div class="layer"></div><div class="layer"></div>
+                                <div class="layer"></div><div class="layer"></div><div class="layer"></div>
+                                <div class="layer"></div><div class="layer"></div><div class="layer"></div><div class="layer"></div>
+                            </div>
+                        </div>
+                        <div class="spec-rows">
+                            <div class="spec-row"><span>MATÉRIAU</span><span>PLA / Résine / PETG</span></div>
+                            <div class="spec-row"><span>HAUTEUR DE COUCHE</span><span>0.05 – 0.20 mm</span></div>
+                            <div class="spec-row"><span>STATUT</span><span>EN PRODUCTION</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Trust bar -->
+    <div class="trust-bar">
+        <div class="container trust-row">
+            <span><i class="fas fa-check-circle"></i>Premier atelier national dédié à l'impression 3D</span>
+            <span><i class="fas fa-map-marker-alt"></i>Basé à Rabat, livraison partout au Maroc</span>
+            <span><i class="fas fa-industry"></i>Du prototype à la petite série</span>
+        </div>
+    </div>
+
+    <!-- Services -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-header">
-                <h2>Services d'Impression 3D</h2>
-                <p>Des solutions innovantes pour matérialiser vos concepts les plus ambitieux</p>
+                <div>
+                    <span class="eyebrow">Nos services</span>
+                    <h2>Quatre métiers, une seule exigence</h2>
+                </div>
+                <p class="desc">De l'ébauche numérique à la pièce finie, chaque projet reçoit le même niveau d'attention — qu'il s'agisse d'un prototype unique ou d'une série technique.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-industry"></i>
-                    </div>
+                    <span class="service-index">01 — Prototypage</span>
                     <h3>Prototypage Avancé</h3>
                     <p>Transformez vos concepts en prototypes fonctionnels avec une précision extrême et des délais accélérés.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
+                    <span class="service-index">02 — Industrie</span>
                     <h3>Pièces Techniques</h3>
                     <p>Composants sur mesure avec des tolérances micrométriques pour des applications industrielles exigeantes.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
+                    <span class="service-index">03 — Architecture</span>
+                    <h3>Maquettes Architecturales</h3>
+                    <p>Modèles détaillés à l'échelle pour l'architecture, l'urbanisme et la présentation de projets.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-index">04 — Création</span>
                     <h3>Design Créatif</h3>
                     <p>Réalisez vos œuvres d'art et designs les plus complexes avec une qualité d'impression exceptionnelle.</p>
                 </div>
@@ -794,51 +663,89 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Process -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <span class="eyebrow">Méthode</span>
+                    <h2>De l'idée à l'objet</h2>
+                </div>
+                <p class="desc">Un processus clair, pensé pour que chaque étape soit visible et maîtrisée — pas de boîte noire.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <span class="step-num">01</span>
+                    <h4>Envoi du fichier</h4>
+                    <p>Vous nous transmettez votre modèle 3D ou votre idée, même à l'état d'esquisse.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-num">02</span>
+                    <h4>Devis & matériau</h4>
+                    <p>Nous vous conseillons sur le matériau et la finition selon l'usage de la pièce.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-num">03</span>
+                    <h4>Production</h4>
+                    <p>Impression sous contrôle qualité, couche par couche, jusqu'à la tolérance visée.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-num">04</span>
+                    <h4>Livraison</h4>
+                    <p>Récupération à l'atelier ou livraison partout au Maroc, sous 24 à 72h.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
     <section class="gallery" id="galerie">
         <div class="container">
-            <div class="gallery-header">
-                <h2>Notre Portfolio</h2>
-                <p>Découvrez l'étendue de nos réalisations en impression 3D</p>
+            <div class="section-header">
+                <div>
+                    <span class="eyebrow">Portfolio</span>
+                    <h2>Réalisations récentes</h2>
+                </div>
+                <p class="desc">Un aperçu de la diversité des projets menés dans notre atelier — de l'industrie au design d'objet.</p>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Impression 3D technique" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1532186773960-85649e5cb70b?auto=format&fit=crop&w=600&q=80" alt="Impression 3D technique" class="gallery-img">
                     <div class="gallery-overlay">
                         <h3>Ingénierie de Précision</h3>
                         <p>Pièces techniques pour applications industrielles</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1581094794355-5d00d071e9c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Prototype médical" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1758387933125-5ac945b4e2cd?auto=format&fit=crop&w=600&q=80" alt="Prototype médical" class="gallery-img">
                     <div class="gallery-overlay">
                         <h3>Solutions Médicales</h3>
                         <p>Prototypes et dispositifs pour le secteur médical</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1565275322666-7498eda530f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Design créatif" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1707735325033-af8b8ad6a01f?auto=format&fit=crop&w=600&q=80" alt="Design créatif" class="gallery-img">
                     <div class="gallery-overlay">
                         <h3>Art Contemporain</h3>
                         <p>Créations artistiques et œuvres uniques</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Architecture" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1563520239648-a24e51d4b570?auto=format&fit=crop&w=600&q=80" alt="Architecture" class="gallery-img">
                     <div class="gallery-overlay">
                         <h3>Maquettes Architecturales</h3>
                         <p>Modèles détaillés pour l'architecture et l'urbanisme</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1581094794355-5d00d071e9c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Accessoires" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1710828530560-2920125ad032?auto=format&fit=crop&w=600&q=80" alt="Accessoires" class="gallery-img">
                     <div class="gallery-overlay">
                         <h3>Accessoires Personnalisés</h3>
                         <p>Objets uniques adaptés à vos besoins spécifiques</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1565275322666-7498eda530f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Prototypes" class="gallery-img">
+                    <img src="https://images.unsplash.com/photo-1752614672115-adcf3e2596af?auto=format&fit=crop&w=600&q=80" alt="Prototypes" class="gallery-img">
                     <div class="gallery-overlay">
                         <h3>Prototypes Industriels</h3>
                         <p>Modèles fonctionnels pour l'ingénierie et le design</p>
@@ -848,20 +755,19 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA -->
     <section class="cta-section" id="contact">
         <div class="container">
             <div class="cta-content">
-                <h2>Prêt à Donner Vie à Vos Idées ?</h2>
-                <p>Contactez-nous dès aujourd'hui pour discuter de votre projet et obtenir un devis personnalisé. Notre équipe d'experts est à votre disposition pour vous accompagner à chaque étape.</p>
+                <span class="eyebrow">Contact</span>
+                <h2>Prêt à donner vie à vos idées ?</h2>
+                <p>Contactez-nous dès aujourd'hui pour discuter de votre projet et obtenir un devis personnalisé. Notre équipe est à votre disposition à chaque étape.</p>
                 <div class="contact-buttons">
                     <a href="https://wa.me/212669681391" class="contact-btn whatsapp-btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                        WhatsApp: +212 669-681391
+                        <i class="fab fa-whatsapp"></i> WhatsApp : +212 669-681391
                     </a>
                     <a href="mailto:goldmaquette@gmail.com" class="contact-btn">
-                        <i class="fas fa-envelope"></i>
-                        goldmaquette@gmail.com
+                        <i class="fas fa-envelope"></i> goldmaquette@gmail.com
                     </a>
                 </div>
             </div>
@@ -874,116 +780,59 @@
             <div class="footer-content">
                 <div class="footer-col">
                     <h3>Impression 3D Maroc</h3>
-                    <p>Votre partenaire d'innovation pour l'impression 3D au Maroc. Créativité, précision et excellence au service de vos projets.</p>
+                    <p>Le premier atelier national dédié à l'impression 3D. Précision, matériaux et savoir-faire au service de vos projets.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h3>Contact</h3>
                     <div class="contact-info">
-                        <div>
-                            <i class="fas fa-phone"></i>
-                            <span>+212 669-681391</span>
-                        </div>
-                        <div>
-                            <i class="fas fa-envelope"></i>
-                            <span>goldmaquette@gmail.com</span>
-                        </div>
+                        <div><i class="fas fa-phone"></i><span>+212 669-681391</span></div>
+                        <div><i class="fas fa-envelope"></i><span>goldmaquette@gmail.com</span></div>
+                        <div><i class="fas fa-map-marker-alt"></i><span>Avenue Hassan II, Rabat</span></div>
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h3>Horaires d'Ouverture</h3>
-                    <p>Lun - Ven: 9h00 - 18h00</p>
-                    <p>Samedi: 9h00 - 13h00</p>
-                    <p>Dimanche: Fermé</p>
+                    <h3>Horaires</h3>
+                    <p>Lun – Ven : 9h00 – 18h00<br>Samedi : 9h00 – 13h00<br>Dimanche : Fermé</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Impression 3D Maroc. Tous droits réservés.</p>
+                <p>&copy; 2026 Impression 3D Maroc. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Navigation scroll effect
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            header.classList.toggle('scrolled', window.scrollY > 40);
         });
 
-        // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
-        
         mobileMenuBtn.addEventListener('click', function() {
             navLinks.classList.toggle('active');
-            if (navLinks.classList.contains('active')) {
-                mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
-            } else {
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active')
+                ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
 
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
+                e.preventDefault();
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
+                    window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
                     if (navLinks.classList.contains('active')) {
                         navLinks.classList.remove('active');
                         mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                     }
                 }
-            });
-        });
-
-        // Create floating particles
-        const particlesContainer = document.getElementById('particles');
-        const particleCount = 50;
-        
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            
-            // Random properties
-            const size = Math.random() * 5 + 2;
-            const posX = Math.random() * 100;
-            const posY = Math.random() * 100;
-            const delay = Math.random() * 15;
-            const duration = Math.random() * 10 + 10;
-            
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            particle.style.left = `${posX}%`;
-            particle.style.top = `${posY}%`;
-            particle.style.animationDelay = `${delay}s`;
-            particle.style.animationDuration = `${duration}s`;
-            
-            particlesContainer.appendChild(particle);
-        }
-
-        // Gallery item click effect
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
-                this.classList.toggle('active');
             });
         });
     </script>
